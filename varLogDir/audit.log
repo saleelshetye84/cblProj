@@ -1,0 +1,5 @@
+05-08-2022 23:05:26.455 +0000 INFO  AuditLogger - Audit:[timestamp=05-08-2022 23:05:26.455, user=splunk-system-user, action=search, info=granted REST: /streams/search]
+05-08-2022 23:05:26.469 +0000 INFO  AuditLogger - Audit:[timestamp=05-08-2022 23:05:26.469, user=splunk-system-user, action=search, info=granted REST: /streams/search]
+05-08-2022 23:05:26.543 +0000 INFO  AuditLogger - Audit:[timestamp=05-08-2022 23:05:26.543, user=splunk-system-user, action=search, info=granted REST: /streams/search]
+05-08-2022 23:05:26.552 +0000 INFO  AuditLogger - Audit:[timestamp=05-08-2022 23:05:26.552, user=splunk-system-user, action=search, info=granted REST: /streams/search]
+05-08-2022 23:05:26.613 +0000 INFO  AuditLogger - Audit:[timestamp=05-08-2022 23:05:26.613, user=splunk-system-user, action=search, info=granted REST: /streams/search]

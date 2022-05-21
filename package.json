@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "express": "^4.18.1",
+    "line-reader": "^0.4.0",
+    "n-readlines": "^1.0.1",
+    "read-last-lines": "^1.8.0"
+  }
+}

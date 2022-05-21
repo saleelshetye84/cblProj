@@ -1,0 +1,48 @@
+05-04-2022 04:37:07.343 +0000 INFO  ServerConfig - No '/opt/splunk/etc/auth/server.pem' certificate found.  Splunkd communication will not work without this.  If this is a fresh installation, this should be OK.
+05-04-2022 04:37:08.118 +0000 INFO  loader - Getting configuration data from: /opt/splunk/etc/myinstall/splunkd.xml
+05-04-2022 04:37:08.119 +0000 INFO  loader - SPLUNK_MODULE_PATH environment variable not found - defaulting to /opt/splunk/etc/modules
+05-04-2022 04:37:08.119 +0000 INFO  loader - loading modules from /opt/splunk/etc/modules
+05-04-2022 04:37:08.120 +0000 INFO  loader - Writing out composite configuration file: /opt/splunk/var/run/splunk/composite.xml
+05-04-2022 04:37:08.126 +0000 WARN  Pstacks - Backtracing is not initialized - GeneratePstacksAction cannot be used..
+05-04-2022 04:37:08.126 +0000 WARN  WatchdogActions - Initialization failed for action=pstacks. Deleting.
+05-04-2022 04:37:08.134 +0000 INFO  loader - Validated 10 indexes in 7.265 milliseconds
+05-04-2022 04:37:08.571 +0000 INFO  loader - Getting configuration data from: /opt/splunk/etc/myinstall/splunkd.xml
+05-04-2022 04:37:08.571 +0000 INFO  loader - SPLUNK_MODULE_PATH environment variable not found - defaulting to /opt/splunk/etc/modules
+05-04-2022 04:37:08.571 +0000 INFO  loader - loading modules from /opt/splunk/etc/modules
+05-04-2022 04:37:08.573 +0000 INFO  loader - Writing out composite configuration file: /opt/splunk/var/run/splunk/composite.xml
+05-04-2022 04:37:11.312 +0000 INFO  loader - Getting configuration data from: /opt/splunk/etc/myinstall/splunkd.xml
+05-04-2022 04:37:11.313 +0000 INFO  loader - SPLUNK_MODULE_PATH environment variable not found - defaulting to /opt/splunk/etc/modules
+05-04-2022 04:37:11.313 +0000 INFO  loader - loading modules from /opt/splunk/etc/modules
+05-04-2022 04:37:11.314 +0000 INFO  loader - Writing out composite configuration file: /opt/splunk/var/run/splunk/composite.xml
+05-04-2022 04:37:11.321 +0000 WARN  Pstacks - Backtracing is not initialized - GeneratePstacksAction cannot be used..
+05-04-2022 04:37:11.321 +0000 WARN  WatchdogActions - Initialization failed for action=pstacks. Deleting.
+05-04-2022 04:37:11.988 +0000 INFO  loader - Validated 1296 indexes in 666.2 milliseconds
+05-04-2022 04:37:11.990 +0000 ERROR Watchdog - IMonitoredThread ptr=0x7f94db7feb40 was still registered during Watchdog shutdown!
+05-04-2022 04:37:12.441 +0000 INFO  loader - Getting configuration data from: /opt/splunk/etc/myinstall/splunkd.xml
+05-04-2022 04:37:12.441 +0000 INFO  loader - SPLUNK_MODULE_PATH environment variable not found - defaulting to /opt/splunk/etc/modules
+05-04-2022 04:37:12.441 +0000 INFO  loader - loading modules from /opt/splunk/etc/modules
+05-04-2022 04:37:12.443 +0000 INFO  loader - Writing out composite configuration file: /opt/splunk/var/run/splunk/composite.xml
+05-08-2022 03:41:51.304 +0000 INFO  loader - Getting configuration data from: /opt/splunk/etc/myinstall/splunkd.xml
+05-08-2022 03:41:51.305 +0000 INFO  loader - SPLUNK_MODULE_PATH environment variable not found - defaulting to /opt/splunk/etc/modules
+05-08-2022 03:41:51.305 +0000 INFO  loader - loading modules from /opt/splunk/etc/modules
+05-08-2022 03:41:51.307 +0000 INFO  loader - Writing out composite configuration file: /opt/splunk/var/run/splunk/composite.xml
+05-08-2022 03:41:51.313 +0000 WARN  Pstacks - Backtracing is not initialized - GeneratePstacksAction cannot be used..
+05-08-2022 03:41:51.313 +0000 WARN  WatchdogActions - Initialization failed for action=pstacks. Deleting.
+05-08-2022 03:41:52.030 +0000 INFO  loader - Validated 1300 indexes in 716.2 milliseconds
+05-08-2022 03:41:52.032 +0000 ERROR Watchdog - IMonitoredThread ptr=0x7f6938ffeb40 was still registered during Watchdog shutdown!
+05-08-2022 03:41:52.492 +0000 INFO  loader - Getting configuration data from: /opt/splunk/etc/myinstall/splunkd.xml
+05-08-2022 03:41:52.492 +0000 INFO  loader - SPLUNK_MODULE_PATH environment variable not found - defaulting to /opt/splunk/etc/modules
+05-08-2022 03:41:52.492 +0000 INFO  loader - loading modules from /opt/splunk/etc/modules
+05-08-2022 03:41:52.494 +0000 INFO  loader - Writing out composite configuration file: /opt/splunk/var/run/splunk/composite.xml
+05-09-2022 03:59:33.384 +0000 INFO  loader - Getting configuration data from: /opt/splunk/etc/myinstall/splunkd.xml
+05-09-2022 03:59:33.384 +0000 INFO  loader - SPLUNK_MODULE_PATH environment variable not found - defaulting to /opt/splunk/etc/modules
+05-09-2022 03:59:33.384 +0000 INFO  loader - loading modules from /opt/splunk/etc/modules
+05-09-2022 03:59:33.386 +0000 INFO  loader - Writing out composite configuration file: /opt/splunk/var/run/splunk/composite.xml
+05-09-2022 03:59:33.392 +0000 WARN  Pstacks - Backtracing is not initialized - GeneratePstacksAction cannot be used..
+05-09-2022 03:59:33.392 +0000 WARN  WatchdogActions - Initialization failed for action=pstacks. Deleting.
+05-09-2022 03:59:34.107 +0000 INFO  loader - Validated 1300 indexes in 714.8 milliseconds
+05-09-2022 03:59:34.109 +0000 ERROR Watchdog - IMonitoredThread ptr=0x7f5df81feb40 was still registered during Watchdog shutdown!
+05-09-2022 03:59:34.566 +0000 INFO  loader - Getting configuration data from: /opt/splunk/etc/myinstall/splunkd.xml
+05-09-2022 03:59:34.566 +0000 INFO  loader - SPLUNK_MODULE_PATH environment variable not found - defaulting to /opt/splunk/etc/modules
+05-09-2022 03:59:34.566 +0000 INFO  loader - loading modules from /opt/splunk/etc/modules
+05-09-2022 03:59:34.568 +0000 INFO  loader - Writing out composite configuration file: /opt/splunk/var/run/splunk/composite.xml

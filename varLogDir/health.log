@@ -1,0 +1,5 @@
+05-08-2022 07:26:46.849 +0000 INFO  PeriodicHealthReporter - feature="Indexer Clustering" color=green node_type=category node_path=splunkd.indexer_clustering
+05-08-2022 07:26:46.849 +0000 INFO  PeriodicHealthReporter - feature="Master Connectivity" color=green due_to_stanza="feature:master_connectivity" node_type=feature node_path=splunkd.indexer_clustering.master_connectivity
+05-08-2022 07:26:46.849 +0000 INFO  PeriodicHealthReporter - feature="Replication Failures" color=green due_to_stanza="feature:replication_failures" node_type=feature node_path=splunkd.indexer_clustering.replication_failures
+05-08-2022 07:26:46.849 +0000 INFO  PeriodicHealthReporter - feature="Slave State" color=green due_to_stanza="feature:slave_state" node_type=feature node_path=splunkd.indexer_clustering.slave_state
+05-08-2022 07:26:46.849 +0000 INFO  PeriodicHealthReporter - feature="Slave Version" color=green due_to_stanza="feature:slave_version" node_type=feature node_path=splunkd.indexer_clustering.slave_version

@@ -1,0 +1,21 @@
+#### Assumptions , Design Considerations########
+1. In real world, the file system applications may write to filesystem in different ways. Here I am assuming that we have
+a stable file (events are completely written to disk) and I am sampling that.
+
+2. Another assumption is that the size of the file is reasonable enough that the REST endpoint api code server.js can handle it.
+
+3. Next design decision/assumption is that use would be first interested in the "contains" filter and then number of events and reverse order in that sequence. We could also implement a "doesNotContain" filter and this
+would be a very good nice-to-have. Also it would be great to have search for capitalized vs noncapitalized searches (as the user might not know the exact filter).
+
+4. If there are a lot of events to be returned, pagination could be implemented.
+
+5. Have covered filtering to filter events by keywords, but there could another filter to say "doesnotcontain".
+
+6. Here the rest endpoint code is assuming that events are time series events and every line of the log file is a seperate event. Basically a time series log file.
+
+7. There are more validations that can be added on the server side to make sure we have the correct parameters ,
+   for eg. what if the user sends `events=abc` . Code at present has only a few validations
+
+8. Authentication is very important and almost a essential part of the REST API design.
+
+9. Also here I have assumed that the entire operation would be completed on time (without any timeouts). Might need to model asynchronicity id the scale changes.
