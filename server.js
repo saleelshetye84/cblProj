@@ -1,18 +1,18 @@
 var express = require('express');
 var app = express();
 const fs = require('fs');
-const lineReader = require('line-reader');
 
-
+//Read the argument for the directory
+var arguments = process.argv ;
+var testFolder = arguments[2] + "/varLogDir/";
+console.log(testFolder) ;
 
 //Some code to list the files in the directory
 app.get('/files', function(req, res) {
-   const testFolder = '/Users/sshetye/cblProj/varLogDir/';
    console.log("Got a GET request for /files");
    let fileList = [];
    fs.readdirSync(testFolder).forEach(file => {
      fileList.push(testFolder + file);
-     //console.log(typeof file);
    });
   res.send(fileList);
 });
@@ -28,44 +28,45 @@ app.get('/files/:file_name', function(req, res) {
   const nReadlines = require('n-readlines');
 
   //check for user entering invalid file(or file not present on disk for any reasons)
-  const path = '/Users/sshetye/cblProj/varLogDir/' + req.params.file_name
+  const path = testFolder + req.params.file_name
 
   fs.access(path, function (error) {
   if (error) {
-    //console.log("DOES NOT exist:", path);
     console.error(error);
     //res.status(404).send(path + " not found.");
   } else {
-    console.log("exists:", path);
+    //console.log("exists:", path);
   }
 });
 
-  const logFileLines = new nReadlines('/Users/sshetye/cblProj/varLogDir/' + req.params.file_name);
-  let fileLogLines = [];
-  let line;
-
-  while (line = logFileLines.next()) {
-      if (req.query.contains !== '' && req.query.contains !== undefined){
-        if (line.toString('ascii').includes(req.query.contains)){
-          fileLogLines.push(line.toString('ascii'));
+ //Now proceed to reading each line of the file, apply filter and reverse order
+ let fileLogLines1 = [];
+ const allFileContents = fs.readFileSync(path, 'utf-8');
+      allFileContents.split(/\r?\n/).forEach(line =>  {
+      if ( line !== null && line !== ''){
+        if (req.query.contains !== '' && req.query.contains !== undefined){
+          if (line.toString('ascii').includes(req.query.contains)){
+            fileLogLines1.push(line.toString('ascii'));
+          }
         }
+        else{
+          fileLogLines1.push(line.toString('ascii'));
+        }
+        //  console.log('Line from file:' + line);
       }
-      else{
-        fileLogLines.push(line.toString('ascii'));
-        //console.log(line.toString('ascii'));
-      }
-  }
-  fileLogLines.reverse();
+    });
+  //console.log('Lines from file:' + fileLogLines1);
+
+  // reverse the order
+  fileLogLines1.reverse();
 
   //check for events parameter
   if (req.query.events !== '' && req.query.events !== undefined){
-      const lastNElements = fileLogLines.slice(0, events);
+      const lastNElements = fileLogLines1.slice(0, events);
       res.status(200).send(lastNElements);
   }
   else{
-      //res.send(fileLogLines);
-      //res.status(200);
-      res.status(200).send(fileLogLines);
+      res.status(200).send(fileLogLines1);
   }
 });
 
