@@ -1,17 +1,25 @@
-###### How to run the code ######
-###Modules to be installed###
+###### Prerequisite #######
+Install node.js
+https://nodejs.org/en/download/
+
+Install packages
 npm install n-readlines
 
-1. server.js file needs to be changed for the ""/var/log/" instead of "/Users/sshetye/cblProj/varLogDir/"
+###### How to run the code ######
+1.   node server.js <folder where you have downloaded the project>
+For e.g.
+> node server.js /Users/sshetye/cblProj
 
 2. Node.js http server needs to installed
-https://www.geeksforgeeks.org/how-to-build-a-simple-web-server-with-node-js/
 
 3. The following calls can be issued:
 
 Request : http://localhost:3000/files
-Response: List of all the files in /var/log (assuming that the user does not which files are present)
-["audit.log","health.log","splunkd-utility.log","splunkd.log"]
+Response: List of all the files in <folder where you have downloaded the project> (assuming that the user does not which files are present)
+["/Users/sshetye/cblProj/varLogDir/audit.log","/Users/sshetye/cblProj/varLogDir/health.log","/Users/sshetye/cblProj/varLogDir/splunkd-utility.log","/Users/sshetye/cblProj/varLogDir/splunkd.log"]
+
+Request : http://localhost:3000/files/splunkd.log1
+Response : Error: ENOENT: no such file or directory, open '/Users/sshetye/cblProj/varLogDir/splunkd.log1'
 
 Request : http://localhost:3000/files/splunkd.log
 Response : Display the entire file (events in reverse order)
