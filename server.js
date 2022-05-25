@@ -1,6 +1,9 @@
 var express = require('express');
 var app = express();
 const fs = require('fs');
+const events = require('events');
+const readline = require('readline');
+const { once } = require('node:events');
 
 //Read the argument for the directory
 var arguments = process.argv ;
@@ -33,16 +36,22 @@ app.get('/files/:file_name', function(req, res) {
   fs.access(path, function (error) {
   if (error) {
     console.error(error);
-    //res.status(404).send(path + " not found.");
+    res.status(404).send(path + " not found.");
   } else {
     //console.log("exists:", path);
   }
 });
 
- //Now proceed to reading each line of the file, apply filter and reverse order
- let fileLogLines1 = [];
- const allFileContents = fs.readFileSync(path, 'utf-8');
-      allFileContents.split(/\r?\n/).forEach(line =>  {
+//async processing
+let fileLogLines1 = [];
+(async function processLineByLine() {
+  try {
+    const rl = readline.createInterface({
+      input: fs.createReadStream(path),
+      crlfDelay: Infinity
+    });
+
+    rl.on('line', (line) => {
       if ( line !== null && line !== ''){
         if (req.query.contains !== '' && req.query.contains !== undefined){
           if (line.toString('ascii').includes(req.query.contains)){
@@ -52,24 +61,30 @@ app.get('/files/:file_name', function(req, res) {
         else{
           fileLogLines1.push(line.toString('ascii'));
         }
-        //  console.log('Line from file:' + line);
       }
     });
-  //console.log('Lines from file:' + fileLogLines1);
 
-  // reverse the order
-  fileLogLines1.reverse();
+    await once(rl, 'close');
+    console.log('Reading file line by line with readline done.');
+    
+    // reverse the order
+    fileLogLines1.reverse();
 
-  //check for events parameter
-  if (req.query.events !== '' && req.query.events !== undefined){
-      const lastNElements = fileLogLines1.slice(0, events);
-      res.status(200).send(lastNElements);
+    //check for events parameter
+    if (req.query.events !== '' && req.query.events !== undefined){
+        const lastNElements = fileLogLines1.slice(0, events);
+        res.status(200).send(lastNElements);
+    }
+    else{
+        res.status(200).send(fileLogLines1);
+    }
+  } catch (err) {
+    console.error(err);
   }
-  else{
-      res.status(200).send(fileLogLines1);
-  }
+})();
 });
 
+//handle any bad routes
 app.get('*', function(req, res){
 res.send('Invalid URL, Please correct and retry.');
 });
