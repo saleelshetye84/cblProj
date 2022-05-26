@@ -1,0 +1,14 @@
+I ############ Extracting time stamps ##############
+
+1. Its possible that for many files in /var/log/ , there are different formats of date/time. Every log potentially might deserve different treatment
+for timestamp extraction. This can be done by defining a regex and extracting the timestamp.
+
+2. It's also possible that while we consider a distributed scenario where the multiple machines are sending in the data to the manager node,
+the events are arriving out of order, so this timestamp based sorting will be helpful.
+
+Note:  Using the term "manager" for "master" (removal of biased language in the docs)
+
+################ How to setup a distributed setup ############
+For a distributed case, the server code on the manager node has to proxy/redirect this request to other machines and then receive a response back
+(pipe it) and continue the computation. I see that there are few different ways we can do this. We will also need to pipe the response back to the manager node
+and continue processing.
